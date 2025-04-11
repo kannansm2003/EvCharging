@@ -12,5 +12,5 @@ export class BookingServiceService {
   placeBooking(chargingStationId: number, chargerId: number, slotNo: number, userId: number): Observable<any> {
     const url = `${this.bookingUrl}?charging_station_id=${chargingStationId}&chargerId=${chargerId}&slot_no=${slotNo}&user_id=${userId}`;
     return this.http.post<any>(url, {});
-  }
+  }//hi im kannan
 }
