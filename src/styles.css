@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    margin: 0%;
+}
+
+.hidescrollicon::-webkit-scrollbar {
+    display: none;
+  }
+ 
+  .hidescrolliconforedge {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }

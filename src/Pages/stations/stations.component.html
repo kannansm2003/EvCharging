@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>Charging stations near you</h1>
+  <br />
+  <div class="grid">
+    <div class="card" *ngFor="let station of chargingStations">
+      <h2>{{ station.location }}</h2>
+      <div class="buttonDiv">
+        <button
+          (click)="storeStationId(station.id)"
+          [routerLink]="['/stationDetails']"
+          class="view-more"
+        >
+          View More &rsaquo;
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

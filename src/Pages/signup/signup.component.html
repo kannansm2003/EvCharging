@@ -1,0 +1,40 @@
+<div class="container">
+  <!-- Left Section (Image) -->
+  <div class="image-section">
+    <img src="assets/signup.jpg" alt="Illustration">
+  </div>
+
+  <!-- Right Section (Form) -->
+  <div class="form-section">
+    <div class="form-box">
+      <br>
+      <h1>WELCOME!</h1>
+      <br>
+      <!-- Tabs -->
+      <div class="tabs">
+        <span (click)="login()" id="login-tab" (keypress)="handleKeyPress($event)">Login</span>
+        <span id="signup-tab" class="active">Sign Up</span>
+      </div>
+
+      <!-- Sign Up Form -->
+      <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+        <label for="username">Username</label>
+        <input type="text" formControlName="username" required>
+
+        <label for="phoneNo">Phone No</label>
+        <input type="text" formControlName="phoneNo" required>
+
+        <label for="password">Password</label>
+
+        <input [type]="showPassword ? 'text' : 'password'" formControlName="password" required>
+
+
+        <label for="confirmPassword">Confirm Password</label>
+
+        <input [type]="showPassword ? 'text' : 'password'" formControlName="confirmPassword" required>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>

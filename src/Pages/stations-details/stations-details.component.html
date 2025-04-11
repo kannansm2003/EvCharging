@@ -1,0 +1,54 @@
+<div class="cont">
+  <div class="container">
+    <div class="tabs">
+      <button
+        [ngClass]="{ active: activeTab === 'location' }"
+        (click)="setActiveTab('location')"
+      >
+        Location Details
+      </button>
+      <button
+        [ngClass]="{ active: activeTab === 'map' }"
+        (click)="setActiveTab('map')"
+      >
+        Map View
+      </button>
+    </div>
+
+    <div *ngIf="stationDetails">
+      <div class="content" *ngIf="activeTab === 'location'">
+        <h2>Location Details</h2>
+        <p><strong>Name:</strong> {{ stationDetails.name }}</p>
+        <p><strong>Address:</strong> {{ stationDetails.location }}</p>
+        <p>
+          <strong>Charging Speed:</strong> {{ stationDetails.chargingSpeed }}
+        </p>
+        <p>
+          <strong>Pricing per KWH:</strong> {{ stationDetails.pricingPerKwh }}
+        </p>
+      </div>
+
+      <div class="content" *ngIf="activeTab === 'map'">
+        <google-map
+          [center]="mapCenter"
+          [zoom]="zoom"
+          height="400px"
+          width="100%"
+        >
+          <map-marker
+            [position]="mapCenter"
+            title="Charging Station"
+          ></map-marker>
+        </google-map>
+      </div>
+
+      <div class="buttonDiv">
+        <button (click)="goToSlotBooking()" class="book-btn">Next</button>
+      </div>
+    </div>
+
+    <div *ngIf="!stationDetails">
+      <p>Loading station details...</p>
+    </div>
+  </div>
+</div>

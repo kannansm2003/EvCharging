@@ -1,0 +1,45 @@
+<body>
+    <div class="title">
+        <h1>History</h1>
+        <div class="user" *ngIf="bookingHistory.length > 0">
+            <div class="userinfo">
+                <div class="Username">
+                    <p>Username: {{ bookingHistory[0]?.user?.username }}</p>
+                </div>
+                <div class="Phone">
+                    <p>Phone No: {{ bookingHistory[0]?.user?.phoneNo }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="table">
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Location</th>
+                        <th>Date</th>
+                        <th>Charger Id</th>
+                        <th>Slot Number</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let booking of bookingHistory">
+                        <td>{{ booking.chargingStation?.location }}</td>
+                        <td>{{ booking.date }}</td>
+                        <td>{{booking.charger?.id}}</td>
+                        <td>{{ booking.slotNo }}</td>
+                        <td>{{ booking.bookingTime | date:'shortTime' }}</td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>

@@ -1,0 +1,23 @@
+<div class="home-container">
+  <div class="image">
+    <img src="assets/home.jpg" alt="EV Charging" />
+  </div>
+  <div *ngIf="!isLoggedin()" class="content">
+    <h1>When Your EV Meets Its Power 🌿</h1>
+    <p>
+      Join India’s largest EV <br> charging network with fast, <br>reliable, and sustainable power <br>
+      for your ride.
+    </p>
+    <div class="buttons">
+      <button routerLink="/login" routerLinkActive="router-link-active" class="login-btn">Login</button>
+      <button routerLink="/signup" routerLinkActive="router-link-active" class="signup-btn">Sign Up</button>
+    </div>
+  </div>
+  <div *ngIf="isLoggedin()" class="content">
+    <h1>Welcome, {{ username }}! ⚡🚗</h1>
+    <p>We're thrilled to have you here! As you embark on your journey
+      towards a greener future, we're here to power up your ride with
+      the best EV charging experience. 🌍🔋</p>
+  </div>
+
+</div>

@@ -1,0 +1,66 @@
+.home-container {
+  display: flex;
+  align-items: center;
+  padding: 0 100px;
+  height: 90vh;
+}
+
+.content {
+  text-align: left;
+  width: 1000px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 100px;
+}
+
+h1 {
+  font-size: 45px;
+  font-weight: bold;
+}
+
+p {
+  font-size: 25px;
+  color: gray;
+  margin-top: 10px;
+}
+
+.buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 400px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-btn {
+  background: black;
+  color: white;
+  border: none;
+  margin-right: 10px;
+  height: 41.6px;
+  width: 100.13px;
+}
+
+.signup-btn {
+  background: white;
+  border: 2px solid black;
+  color: black;
+  height: 41.6px;
+  width: 100.13px;
+}
+
+.image img {
+  height: 100%;
+}
+
+.image {
+  height: 70%;
+}

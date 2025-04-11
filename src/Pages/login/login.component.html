@@ -1,0 +1,32 @@
+<div class="container">
+  <!-- Left Section (Image) -->
+  <div class="image-section">
+    <img src="assets/login.jpg" alt="Illustration">
+  </div>
+
+  <!-- Right Section (Login Form) -->
+  <div class="form-section">
+    <div class="login-box">
+      <br>
+      <h1>WELCOME!</h1>
+      <br>
+      <div class="tabs">
+        <span class="active">Login</span>
+        <span (click)="signup()" (keypress)="handleKeyPress($event)">Sign Up</span>
+      </div>
+      <br>
+      <br>
+      <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+        <label for="username">Username</label>
+        <input type="text" formControlName="username" required>
+        <br>
+        <br>
+        <label for="password">Password</label>
+        <input type="password" formControlName="password" required>
+        <br>
+        <br>
+        <button class="btn" type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>

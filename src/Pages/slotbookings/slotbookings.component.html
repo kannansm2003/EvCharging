@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="charger-container">
+    <img
+      src="../../assets/charger.png"
+      alt="EV Charger"
+      class="charger-image"
+    />
+  </div>
+
+  <div class="slots-container">
+    <div *ngFor="let charger of availableChargers" class="slot-group">
+      <div class="slots-Available">
+        <h2>Charger ID: {{ charger.chargerId }}</h2>
+        <h4>
+          <span
+            [ngClass]="{
+              'text-red': getAvailableSlotCount(charger.chargerId) === 0
+            }"
+          >
+            {{ getAvailableSlotCount(charger.chargerId) }} Available slot(s)
+          </span>
+        </h4>
+      </div>
+
+      <div class="slots">
+        <div
+          *ngFor="let slot of getSlotsForCharger(charger.chargerId)"
+          class="slot"
+          [class.available]="slot.status === 'available'"
+          [class.booked]="slot.status === 'booked'"
+          (click)="handleSlotClick(slot, charger)"
+          (keydown.enter)="handleSlotClick(slot, charger)"
+        >
+          <div class="slot-details" *ngIf="slot.status==='available'">
+            <span>{{ slot.slotNo }}</span
+            ><br />
+            <span>{{ slot.date }}</span
+            ><br />
+            <span>{{ slot.timeRange.split(": ")[1] }}</span>
+          </div>
+          <img
+            *ngIf="slot.status === 'booked'"
+            src="assets/car.jpg"
+            alt="Booked Car"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
